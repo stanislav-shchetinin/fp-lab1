@@ -7,28 +7,7 @@ on:
 permissions: read-all
 
 jobs:
-  task1:
-    strategy:
-      fail-fast: false
-
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./task10
-
-    steps:
-      - name: Checkout tree
-        uses: actions/checkout@v4
-
-      - name: Set-up OCaml
-        uses: ocaml/setup-ocaml@v3
-        with:
-          ocaml-compiler: 4.14
-
-      - run: opam install . --deps-only --with-test
-      - run: dune exec task10
-
-  task30:
+  task21:
     strategy:
       fail-fast: false
 
@@ -46,6 +25,27 @@ jobs:
         with:
           ocaml-compiler: 4.14
 
-      - run: opam install . --deps-only --with-test
-      - run: opam install dune
-      - run: dune exec task21
+      - name: Install dependencies
+        run: |
+          eval $(opam env)
+          opam install . --deps-only --with-test
+
+      - name: Install Dune
+        run: |
+          eval $(opam env)
+          opam install dune
+
+      - name: Build
+        run: |
+          eval $(opam env)
+          dune build
+
+      - name: Run tests
+        run: |
+          eval $(opam env)
+          dune runtest
+
+      - name: Execute task
+        run: |
+          eval $(opam env)
+          dune exec ./task21
