@@ -48,4 +48,4 @@ jobs:
       - name: Execute task
         run: |
           eval $(opam env)
-          dune exec ./task21
+          dune exec task21
