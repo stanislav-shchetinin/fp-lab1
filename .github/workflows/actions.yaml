@@ -27,6 +27,7 @@ jobs:
 
       - run: opam install dune
       - run: eval $(opam env)
+      - run: source ~/.bashrc 
       - run: dune exec task10
   
   task21:
@@ -49,4 +50,5 @@ jobs:
 
       - run: opam install dune
       - run: eval $(opam env)
+      - run: source ~/.bashrc 
       - run: dune exec task21
