@@ -25,8 +25,8 @@ jobs:
         with:
           ocaml-compiler: 4.14
 
-      - run: eval $(opam env)
       - run: opam install dune
+      - run: eval $(opam env)
       - run: dune exec task10
   
   task21:
@@ -47,6 +47,6 @@ jobs:
         with:
           ocaml-compiler: 4.14
 
-      - run: eval $(opam env)
       - run: opam install dune
+      - run: eval $(opam env)
       - run: dune exec task21
