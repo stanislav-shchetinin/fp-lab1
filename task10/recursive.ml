@@ -8,6 +8,3 @@ let rec sum_of_primes maxn n =
       | _ -> if n mod i = 0 then false else is_prime n (i + 1)
     in
     if is_prime n 2 then n + sum_of_primes maxn (n + 1) else sum_of_primes maxn (n + 1)
-    
-
-let () = Printf.printf "%d\n" (sum_of_primes 2000000 2)

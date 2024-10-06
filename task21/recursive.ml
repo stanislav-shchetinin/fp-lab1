@@ -5,10 +5,8 @@ let rec sum_of_del n i =
 
 let d n = sum_of_del n 1
 
-let rec cnt_of_pairs maxn n = 
+let rec sum_of_pairs maxn n = 
   match n with
   | n when n = (maxn + 1) -> 0
   | _ -> let dn = d n in
-    if d (dn) = n && dn != n then n + cnt_of_pairs maxn (n + 1) else cnt_of_pairs maxn (n + 1)
-
-let () = print_int(cnt_of_pairs 10000 1)
+    if d (dn) = n && dn != n then n + sum_of_pairs maxn (n + 1) else sum_of_pairs maxn (n + 1)
