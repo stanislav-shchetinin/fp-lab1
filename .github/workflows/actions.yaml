@@ -17,18 +17,19 @@ jobs:
         working-directory: ./task10
 
     steps:
-      - name: Checkout tree
-        uses: actions/checkout@v4
+    - name: Checkout repository
+      uses: actions/checkout@v2
 
-      - name: Set-up OCaml
-        uses: ocaml/setup-ocaml@v3
-        with:
-          ocaml-compiler: 4.14
+    - name: Set up OCaml
+      uses: ocaml/setup-ocaml@v2
+      with:
+        ocaml-version: 4.14.0
 
-      - run: opam install dune
-      - run: eval $(opam env)
-      - run: source ~/.bashrc 
-      - run: dune exec task10
+    - name: Install dependencies
+      run: opam install . --deps-only --with-test
+    
+    - name: Run tests
+      run: dune exec task10
   
   task21:
     strategy:
@@ -40,15 +41,16 @@ jobs:
         working-directory: ./task21
 
     steps:
-      - name: Checkout tree
-        uses: actions/checkout@v4
+    - name: Checkout repository
+      uses: actions/checkout@v2
 
-      - name: Set-up OCaml
-        uses: ocaml/setup-ocaml@v3
-        with:
-          ocaml-compiler: 4.14
+    - name: Set up OCaml
+      uses: ocaml/setup-ocaml@v2
+      with:
+        ocaml-version: 4.14.0
 
-      - run: opam install dune
-      - run: eval $(opam env)
-      - run: source ~/.bashrc 
-      - run: dune exec task21
+    - name: Install dependencies
+      run: opam install . --deps-only --with-test
+    
+    - name: Run tests
+      run: dune exec task21
