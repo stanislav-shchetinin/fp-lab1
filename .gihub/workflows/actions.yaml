@@ -38,15 +38,6 @@ jobs:
         working-directory: ./task21
 
     steps:
-      - name: Checkout tree
-        uses: actions/checkout@v4
-
-      - name: Set-up OCaml
-        uses: ocaml/setup-ocaml@v3
-        with:
-          ocaml-compiler: 4.14
-
-    steps:
     - name: Checkout tree
       uses: actions/checkout@v4
 
