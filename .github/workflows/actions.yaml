@@ -7,7 +7,7 @@ on:
 permissions: read-all
 
 jobs:
-  task10:
+  task1:
     strategy:
       fail-fast: false
 
@@ -17,21 +17,18 @@ jobs:
         working-directory: ./task10
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+      - name: Checkout tree
+        uses: actions/checkout@v4
 
-    - name: Set up OCaml
-      uses: ocaml/setup-ocaml@v3
-      with:
-        ocaml-version: 4.14
+      - name: Set-up OCaml
+        uses: ocaml/setup-ocaml@v3
+        with:
+          ocaml-compiler: 4.14
 
-    - name: Install dependencies
-      run: opam install . --deps-only --with-test
-    
-    - name: Run tests
-      run: dune exec task10
-  
-  task21:
+      - run: opam install . --deps-only --with-test
+      - run: dune exec task10
+
+  task30:
     strategy:
       fail-fast: false
 
@@ -41,16 +38,13 @@ jobs:
         working-directory: ./task21
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+      - name: Checkout tree
+        uses: actions/checkout@v4
 
-    - name: Set up OCaml
-      uses: ocaml/setup-ocaml@v3
-      with:
-        ocaml-version: 4.14
+      - name: Set-up OCaml
+        uses: ocaml/setup-ocaml@v3
+        with:
+          ocaml-compiler: 4.14
 
-    - name: Install dependencies
-      run: opam install . --deps-only --with-test
-    
-    - name: Run tests
-      run: dune exec task21
+      - run: opam install . --deps-only --with-test
+      - run: dune exec task21
