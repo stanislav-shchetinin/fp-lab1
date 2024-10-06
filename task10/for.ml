@@ -13,6 +13,5 @@ let sum_of_primes n =
   done;
   !ans
 
-let () = Printf.printf "%d\n" (sum_of_primes 2000000)
 
 

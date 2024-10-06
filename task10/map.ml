@@ -7,5 +7,3 @@ let is_prime n =
   |> (List.fold_left (+) 0) = 0
  
 let sum_of_primes n = seq_gen 2 n |> List.filter is_prime |> List.fold_left (+) 0
-
-let () = Printf.printf "%d\n" (sum_of_primes 2000000)

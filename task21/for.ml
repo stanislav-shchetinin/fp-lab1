@@ -13,5 +13,3 @@ let sum_of_pairs n =
       res := !res + x
   done;
   !res
-
-let () = Printf.printf "%d\n" (sum_of_pairs 10000)
