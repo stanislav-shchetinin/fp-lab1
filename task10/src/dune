@@ -17,3 +17,7 @@
 (library
  (name for)
  (modules for))
+
+ (library
+ (name generator)
+ (modules generator))

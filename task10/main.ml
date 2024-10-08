@@ -19,3 +19,7 @@ Printf.printf "Map: %d\n" (Map.sum_of_primes 2000000);
 (*For module check*)
 assert(For.sum_of_primes 2000000 == result);
 Printf.printf "For: %d\n" (For.sum_of_primes 2000000);
+
+(*Generator module check*)
+assert(Generator.sum_of_primes 2000000 == result);
+Printf.printf "Generator: %d\n" (Generator.sum_of_primes 2000000);
