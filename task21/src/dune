@@ -19,5 +19,5 @@
  (modules for))
 
  (library
- (name generator)
- (modules generator))
+ (name lazy_seq)
+ (modules lazy_seq))

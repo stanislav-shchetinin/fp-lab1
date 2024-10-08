@@ -21,5 +21,5 @@ assert(For.sum_of_primes 2000000 == result);
 Printf.printf "For: %d\n" (For.sum_of_primes 2000000);
 
 (*Generator module check*)
-assert(Generator.sum_of_primes 2000000 == result);
-Printf.printf "Generator: %d\n" (Generator.sum_of_primes 2000000);
+assert(Lazy_seq.sum_of_primes 2000000 == result);
+Printf.printf "Lazy seq: %d\n" (Lazy_seq.sum_of_primes 2000000);

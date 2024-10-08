@@ -1,5 +1,5 @@
 (executable
      (name main)
      (modules main)
-     (libraries recursive tail_recursive modular map for generator)
+     (libraries recursive tail_recursive modular map for lazy_seq)
      (public_name task10))
