@@ -1,4 +1,1 @@
-(executable
-     (name main)
-     (modules recursive tail_recursive modular map for main)
-     (public_name task10))
+(subdir src)
