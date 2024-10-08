@@ -1,4 +1,5 @@
 (executable
      (name main)
-     (modules recursive tail_recursive modular map for main)
+     (modules main)
+     (libraries recursive tail_recursive modular map for)
      (public_name task21))
