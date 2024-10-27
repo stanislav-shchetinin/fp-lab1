@@ -1,12 +1,10 @@
-let seq_gen k n =
-  Seq.unfold (fun state -> 
-    match state = n + 1 with
-    | true -> None
-    | false -> Some (state, state + 1)) k
+let seq_gen k =
+  Seq.unfold (fun x -> Some (x, x + 1)) k
 
 let is_div n x = n mod x = 0
 let d n = 
-  seq_gen 1 (n / 2 + 1)
+  seq_gen 1
+  |> Seq.take (n / 2 + 1)
   |> List.of_seq
   |> List.filter (is_div n)
   |> (List.fold_left (+) 0)
@@ -14,7 +12,8 @@ let d n =
 let is_good n = d( d n ) = n && n != d(n)
 
 let sum_of_pairs n = 
-  seq_gen 1 n
+  seq_gen 1
+  |> Seq.take n
   |> List.of_seq
   |> List.filter is_good
   |> (List.fold_left (+) 0)
