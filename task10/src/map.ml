@@ -6,4 +6,7 @@ let is_prime n =
   |> List.filter (is_not_good n)
   |> (List.fold_left (+) 0) = 0
  
-let sum_of_primes n = seq_gen 2 n |> List.filter is_prime |> List.fold_left (+) 0
+let sum_of_primes n =
+  seq_gen 2 n
+  |> List.filter is_prime
+  |> List.fold_left (+) 0

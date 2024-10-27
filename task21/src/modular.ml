@@ -1,5 +1,8 @@
 let rec seq_gen k n acc =
-  if k > n then acc else seq_gen (k + 1) n (k :: acc)
+  match k > n with
+  | true -> acc
+  | false -> seq_gen (k + 1) n (k :: acc)
+
 
 let is_div n x = n mod x = 0
 

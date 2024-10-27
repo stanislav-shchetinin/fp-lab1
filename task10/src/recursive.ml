@@ -1,10 +1,16 @@
-let rec sum_of_primes maxn n = 
+let rec sum_of_primes n = 
   match n with
-  | n when n = maxn -> 0
+  | 0 | 1  -> 0
   | _ -> 
     let rec is_prime n i =
       match i with
-      | i when float_of_int i > Float.sqrt (float_of_int n) -> true
-      | _ -> if n mod i = 0 then false else is_prime n (i + 1)
+      | i when
+              float_of_int i > Float.sqrt (float_of_int n) -> true
+      | _ ->
+         match n mod i with 
+         | 0 -> false
+         | _ -> is_prime n (i + 1)
     in
-    if is_prime n 2 then n + sum_of_primes maxn (n + 1) else sum_of_primes maxn (n + 1)
+    match is_prime n 2 with
+    | true ->  n + sum_of_primes (n - 1)
+    | false -> sum_of_primes (n - 1)

@@ -1,12 +1,12 @@
 let result = 142913828922;;
 
 (*Resursive module check*)
-assert(Recursive.sum_of_primes 2000000 2 == result);
-Printf.printf "Recursive: %d\n" (Recursive.sum_of_primes 2000000 2);
+assert(Recursive.sum_of_primes 2000000 == result);
+Printf.printf "Recursive: %d\n" (Recursive.sum_of_primes 2000000);
 
 (*Tail_resursive module check*)
-assert(Tail_recursive.sum_of_primes 2000000 2 0 == result);
-Printf.printf "Tail recursive: %d\n" (Tail_recursive.sum_of_primes 2000000 2 0);
+assert(Tail_recursive.sum_of_primes 2000000 0 == result);
+Printf.printf "Tail recursive: %d\n" (Tail_recursive.sum_of_primes 2000000 0);
 
 (*Modular module check*)
 assert(Modular.sum_of_primes 2000000 == result);

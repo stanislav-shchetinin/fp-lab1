@@ -1,5 +1,8 @@
 let seq_gen k n =
-  Seq.unfold (fun state -> if state = n + 1 then None else Some (state, state + 1)) k
+  Seq.unfold (fun state -> 
+    match state = n + 1 with
+    | true -> None
+    | false -> Some (state, state + 1)) k
 
 let is_div n x = n mod x = 0
 let d n = 
